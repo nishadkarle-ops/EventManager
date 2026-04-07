@@ -55,7 +55,7 @@ app.get('/api/registrations', async (req, res) => {
         const response = await docClient.send(command);
         res.json(response.Items);
     } catch (err) {
-        console.error(err);
+        console.error("🔥 FULL ERROR:", err); // 👈 IMPORTANT
         res.status(500).json({ message: 'Error fetching registrations.' });
     }
 });
