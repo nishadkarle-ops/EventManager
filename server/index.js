@@ -14,9 +14,9 @@ app.use(express.json());
 // DynamoDB Configuration
 // Note: Requires AWS credentials in .env or environment
 const client = new DynamoDBClient({
-    region: process.env.AWS_REGION || "ap-south-1",
+    
     const client = new DynamoDBClient({
-    region: process.env.AWS_REGION || "us-east-1"
+    region: process.env.AWS_REGION || "ap-south-1"
 });
     // Useful for local testing with DynamoDB Local
     endpoint: process.env.DYNAMODB_ENDPOINT || undefined 
