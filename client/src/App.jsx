@@ -23,13 +23,13 @@ const App = () => {
         setStatus({ type: '', message: '' });
 
         try {
-            const response = await axios.post('http://localhost:5000/api/register', formData);
+            const response = await axios.post('http://65.2.140.37:5000/api/register', formData);
             setStatus({ type: 'success', message: response.data.message });
             setFormData({ name: '', email: '', phone: '', event: 'Networking Gala 2026', message: '' });
         } catch (error) {
-            setStatus({ 
-                type: 'error', 
-                message: error.response?.data?.message || 'Something went wrong. Is the server running?' 
+            setStatus({
+                type: 'error',
+                message: error.response?.data?.message || 'Something went wrong. Is the server running?'
             });
         } finally {
             setLoading(false);
@@ -64,37 +64,37 @@ const App = () => {
 
                             <div className="input-group">
                                 <label><User size={16} /> Full Name</label>
-                                <input 
-                                    type="text" 
-                                    name="name" 
-                                    value={formData.name} 
-                                    onChange={handleChange} 
-                                    placeholder="John Doe" 
-                                    required 
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="John Doe"
+                                    required
                                 />
                             </div>
 
                             <div className="input-row">
                                 <div className="input-group">
                                     <label><Mail size={16} /> Email Address</label>
-                                    <input 
-                                        type="email" 
-                                        name="email" 
-                                        value={formData.email} 
-                                        onChange={handleChange} 
-                                        placeholder="john@example.com" 
-                                        required 
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="john@example.com"
+                                        required
                                     />
                                 </div>
                                 <div className="input-group">
                                     <label><Phone size={16} /> Phone Number</label>
-                                    <input 
-                                        type="tel" 
-                                        name="phone" 
-                                        value={formData.phone} 
-                                        onChange={handleChange} 
-                                        placeholder="+1 234 567 890" 
-                                        required 
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="+1 234 567 890"
+                                        required
                                     />
                                 </div>
                             </div>
@@ -111,10 +111,10 @@ const App = () => {
 
                             <div className="input-group">
                                 <label><MapPin size={16} /> Message / Notes</label>
-                                <textarea 
-                                    name="message" 
-                                    value={formData.message} 
-                                    onChange={handleChange} 
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     placeholder="Any special requirements?"
                                 />
                             </div>
