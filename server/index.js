@@ -15,10 +15,9 @@ app.use(express.json());
 // Note: Requires AWS credentials in .env or environment
 const client = new DynamoDBClient({
     region: process.env.AWS_REGION || "ap-south-1",
-    credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID || "local",
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "local"
-    },
+    const client = new DynamoDBClient({
+    region: process.env.AWS_REGION || "us-east-1"
+});
     // Useful for local testing with DynamoDB Local
     endpoint: process.env.DYNAMODB_ENDPOINT || undefined 
 });
